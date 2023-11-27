@@ -6,10 +6,16 @@ const generateMarkdown = require("./utils/generateMarkdown");
 
 // Created an array of questions for user input
 const questions = [
+    
     {
       type: 'input',
       name: 'title',
       message: 'What is the project name?',
+    },
+    {
+        type: 'input',
+        name: 'name',
+        message: 'what is your name?',
     },
     {
         type: 'input',
@@ -45,8 +51,18 @@ const questions = [
         type: 'checkbox',
         message: 'which license did you use for this project?',
         name: 'license',
-        choice: ['the MIT License', 'the GPL License', 'Apache license', 'GNU license', 'N/A'],
-       
+        choices: [
+            {name:'MIT'},
+            {name: 'GPL'} , 
+            {name: 'Apache'},
+            {name: 'GNU'}, 
+            {name:'BSD 2'},
+            {name: 'BSD 3'} , 
+            {name: 'Boost Software'},
+            {name: 'Mozilla'}, 
+            {name: 'Creative Commons Zero'},
+            {name: 'N/A'},
+        ], 
       },
       {
         type: 'input',
@@ -73,18 +89,27 @@ const questions = [
         
       }
       
-  ]
+    ]
 
 // function to write README file
-function writeToFile(fileName, data) {
-return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+async function writeToFileAsync(fileName, data) {
+    try {
+        await fs.promises.writeFile(fileName, data);
+        console.log("File written successfully!");
+    } catch (error) {
+        console.error("Error writing file:", error);
+    }
 }
+
+//  function writeToFile(fileName, data) {
+// return fs.writeFileSync(path.join(process.cwd(), fileName), data);
+// }
 
 // function to initialize app
 function init() {
     inquirer.prompt(questions).then((responses) => {
         console.log ("creating Professional README.md File..");
-        writeToFile("./misc", generateMarkdown({ ...responses}));
+        writeToFileAsync("./misc/README.md", generateMarkdown({ ...responses}));
     });
 }
     init();
