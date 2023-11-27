@@ -23,6 +23,13 @@ const questions = [
         name: 'description',
         
       },
+
+      {
+        type: 'input',
+        message: 'list any dependencies',
+        name: 'require'
+
+      },
     {
       type: 'input',
       message: 'Instructions to follow?',
