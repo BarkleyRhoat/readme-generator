@@ -9,12 +9,12 @@ function renderLicenseBadge(license) {
 
 //  function that returns the license link
 //  no license, return an empty string
-function renderLicenseLink(license) {
-  if (license !== "none") {
-    return `\n[License](*license)\n`;
-  }
-  return "";
-}
+// function renderLicenseLink(license) {
+//   if (license !== "none") {
+//     return `\n[License](*license)\n`;
+//   }
+//   return "";
+// }
 
 // function that returns the license section of README
 // no license, return an empty string
