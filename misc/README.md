@@ -22,6 +22,8 @@
   ## Contributors
   n/a
   ## Testing
+
+  ![screenshot](/images/finish%20product%20.png)
   
   [video of walkthrough](https://drive.google.com/file/d/16MzKc2pDUmYSLHjqKerMCDQaTBcEfvpJ/view)
 
