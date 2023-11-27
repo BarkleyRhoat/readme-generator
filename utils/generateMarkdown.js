@@ -7,15 +7,6 @@ function renderLicenseBadge(license) {
   return "";
 }
 
-//  function that returns the license link
-//  no license, return an empty string
-// function renderLicenseLink(license) {
-//   if (license !== "none") {
-//     return `\n[License](*license)\n`;
-//   }
-//   return "";
-// }
-
 // function that returns the license section of README
 // no license, return an empty string
 function renderLicenseSection(license) {
@@ -40,7 +31,6 @@ function generateMarkdown(data) {
   * [Contributors](#contributors)
   * [Testing](#testing)
   * [License](#license)
-  ${renderLicenseLink(data.license)}
   ## Description
   ${data.description}
   ## Requirments
